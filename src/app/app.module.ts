@@ -10,13 +10,15 @@ import {TicketCatalogueComponent} from './component/ticket-catalogue/ticket-cata
 import {MenubarModule} from 'primeng/menubar';
 import {RouterModule} from '@angular/router';
 import {ProductComponent} from './component/product-component/product.component';
+import {TicketDetailsComponent} from './component/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     TicketCatalogueComponent,
-    ProductComponent
+    ProductComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import {ProductComponent} from './component/product-component/product.component'
       [
         {path: 'main', component: MainComponent},
         {path: 'tickets', component: TicketCatalogueComponent},
-        {path: 'products', component: ProductComponent}
+        {path: 'products', component: ProductComponent},
+        {path: 'ticket', component: TicketDetailsComponent}
       ]
     )
   ],

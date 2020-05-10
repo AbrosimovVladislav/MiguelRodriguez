@@ -25,7 +25,8 @@
         <td>{{ticket.scrapperOffer.age}}</td>
         <td>{{ticket.productIds}}</td>
         <td>{{ticket.createdTime}}</td>
-        <p-button label="Click"></p-button>
+        <a href="http://localhost:4200/ticket/"></a>
+        <p-button (onClick)="toDetails($event,ticket.id)" label="Click" ></p-button>
       </tr>
     </ng-template>
   </p-table>

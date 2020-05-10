@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {Ticket} from '../../model/Ticket';
 import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ticket-catalogue',
@@ -10,7 +11,8 @@ import {HttpClient} from '@angular/common/http';
 export class TicketCatalogueComponent implements OnInit {
   tickets: Ticket[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.httpClient.get<Ticket[]>('http://localhost:8083/tickets')
@@ -18,4 +20,15 @@ export class TicketCatalogueComponent implements OnInit {
         ticks.forEach(tick => this.tickets.push(tick));
       });
   }
+
+  toDetails(event: EventEmitter<any>, id: string) {
+    this.router.navigate(['/ticket', {ticketID: id}]);
+  }
 }
+
+/*
+    this.httpClient.get<Ticket>('http://localhost:8083/tickets/' + id)
+      .subscribe(inputTicket => {
+        ticket = inputTicket;
+      });
+ */
