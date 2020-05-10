@@ -1,0 +1,20 @@
+<p-table [value]="products" [paginator]="true" [rows]="50" [autoLayout]="true">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>productId</th>
+      <th>model</th>
+      <th>brand</th>
+      <th>type</th>
+      <th>age</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{product.productId}}</td>
+      <td>{{product.model}}</td>
+      <td>{{product.brand}}</td>
+      <td>{{product.type.showName}}</td>
+      <td>{{product.age}}</td>
+    </tr>
+  </ng-template>
+</p-table>

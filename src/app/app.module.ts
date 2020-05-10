@@ -9,12 +9,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {TicketCatalogueComponent} from './component/ticket-catalogue/ticket-catalogue.component';
 import {MenubarModule} from 'primeng/menubar';
 import {RouterModule} from '@angular/router';
+import {ProductComponent} from './component/product-component/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    TicketCatalogueComponent
+    TicketCatalogueComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import {RouterModule} from '@angular/router';
     RouterModule.forRoot(
       [
         {path: 'main', component: MainComponent},
-        {path: 'ticket-catalogue', component: TicketCatalogueComponent}
+        {path: 'tickets', component: TicketCatalogueComponent},
+        {path: 'products', component: ProductComponent}
       ]
     )
   ],

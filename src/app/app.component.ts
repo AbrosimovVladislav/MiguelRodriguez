@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MenuItem} from 'primeng';
 
 @Component({
@@ -6,18 +6,11 @@ import {MenuItem} from 'primeng';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'MiguelRodriguez';
-
-  items: MenuItem[];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-    this.items = [
-      {label: 'Main', url: 'main'},
-      {label: 'Ticket Catalogue', url: 'ticket-catalogue'}
-    ];
-  }
+  items: MenuItem[] = [
+    {label: 'Main', url: 'main'},
+    {label: 'Ticket Catalogue', url: 'tickets'},
+    {label: 'Product Catalogue', url: 'products'}
+  ];
 }
