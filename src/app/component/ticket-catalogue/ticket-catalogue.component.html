@@ -1,0 +1,39 @@
+<header>
+  <h1>This is TroubleTicketUI (Miguel Rodriguez)</h1>
+</header>
+<main>
+  <p-table [value]="tickets" [paginator]="true" [rows]="50" [autoLayout]="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>brand</th>
+        <th>price</th>
+        <th>type</th>
+        <th>shopName</th>
+        <th>link</th>
+        <th>age</th>
+        <th>productIds</th>
+        <th>createdTime</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ticket>
+      <tr>
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.scrapperOffer.name}}</td>
+        <td>{{ticket.scrapperOffer.brand}}</td>
+        <td>{{ticket.scrapperOffer.price}}</td>
+        <td>{{ticket.scrapperOffer.type.showName}}</td>
+        <td>{{ticket.scrapperOffer.shopName}}</td>
+        <td>{{ticket.scrapperOffer.link}}</td>
+        <td>{{ticket.scrapperOffer.age}}</td>
+        <td>{{ticket.productIds}}</td>
+        <td>{{ticket.createdTime}}</td>
+        <p-button label="Click"></p-button>
+      </tr>
+    </ng-template>
+  </p-table>
+</main>
+<footer>
+  © 2020 Miguel Rodriguez Production, Inc.
+</footer>
