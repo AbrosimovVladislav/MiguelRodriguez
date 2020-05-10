@@ -30,8 +30,8 @@ import {TicketDetailsComponent} from './component/ticket-details/ticket-details.
       [
         {path: 'main', component: MainComponent},
         {path: 'tickets', component: TicketCatalogueComponent},
-        {path: 'products', component: ProductComponent},
-        {path: 'ticket', component: TicketDetailsComponent}
+        {path: 'tickets/:id', component: TicketDetailsComponent},
+        {path: 'products', component: ProductComponent}
       ]
     )
   ],

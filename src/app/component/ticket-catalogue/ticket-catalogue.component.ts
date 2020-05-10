@@ -22,13 +22,6 @@ export class TicketCatalogueComponent implements OnInit {
   }
 
   toDetails(event: EventEmitter<any>, id: string) {
-    this.router.navigate(['/ticket', {ticketID: id}]);
+    this.router.navigate(['/tickets/' + id]);
   }
 }
-
-/*
-    this.httpClient.get<Ticket>('http://localhost:8083/tickets/' + id)
-      .subscribe(inputTicket => {
-        ticket = inputTicket;
-      });
- */
