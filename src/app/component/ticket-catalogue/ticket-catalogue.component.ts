@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {Ticket} from '../../model/Ticket';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {TicketService} from '../../service/ticket-service';
 
 @Component({
   selector: 'app-ticket-catalogue',
@@ -11,14 +12,17 @@ import {Router} from '@angular/router';
 export class TicketCatalogueComponent implements OnInit {
   tickets: Ticket[] = [];
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private ticketService: TicketService, private httpClient: HttpClient, private router: Router) {
   }
 
-  ngOnInit(): void {
-    this.httpClient.get<Ticket[]>('http://localhost:8083/tickets')
-      .subscribe(ticks => {
-        ticks.forEach(tick => this.tickets.push(tick));
-      });
+  ngOnInit() {
+    const url = 'http://localhost:8083/tickets';
+    this.ticketService.getTickets(url).subscribe(
+      tickets => {
+        this.tickets = tickets;
+        console.log(this.tickets);
+      }
+    );
   }
 
   toDetails(event: EventEmitter<any>, id: string) {
