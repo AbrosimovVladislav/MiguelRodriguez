@@ -11,6 +11,8 @@ import {MenubarModule} from 'primeng/menubar';
 import {RouterModule} from '@angular/router';
 import {ProductComponent} from './component/product-component/product.component';
 import {TicketDetailsComponent} from './component/ticket-details/ticket-details.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DropdownModule, InputTextModule} from 'primeng';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import {TicketDetailsComponent} from './component/ticket-details/ticket-details.
     TicketDetailsComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     TableModule,
     ButtonModule,
@@ -33,10 +36,11 @@ import {TicketDetailsComponent} from './component/ticket-details/ticket-details.
         {path: 'tickets/:id', component: TicketDetailsComponent},
         {path: 'products', component: ProductComponent}
       ]
-    )
+    ),
+    InputTextModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

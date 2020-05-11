@@ -1,31 +1,60 @@
-<p-table [value]="tickets" [paginator]="true" [rows]="50" [autoLayout]="true">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>brand</th>
-        <th>price</th>
-        <th>type</th>
-        <th>shopName</th>
-        <th>link</th>
-        <th>age</th>
-        <th>productIds</th>
-        <th>createdTime</th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-ticket>
-      <tr>
-        <td>{{ticket.id}}</td>
-        <td>{{ticket.scrapperOffer.name}}</td>
-        <td>{{ticket.scrapperOffer.brand}}</td>
-        <td>{{ticket.scrapperOffer.price}}</td>
-        <td>{{ticket.scrapperOffer.type.showName}}</td>
-        <td>{{ticket.scrapperOffer.shopName}}</td>
-        <td>{{ticket.scrapperOffer.link}}</td>
-        <td>{{ticket.scrapperOffer.age}}</td>
-        <td>{{ticket.productIds}}</td>
-        <td>{{ticket.createdTime}}</td>
-        <p-button (onClick)="toDetails($event, ticket.id)" label="Click" ></p-button>
-      </tr>
-    </ng-template>
-  </p-table>
+<p-table #dt [value]="tickets" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [autoLayout]="true"
+         dataKey="id" sortField="id" [globalFilterFields]="['inProgress','resolved']" styleClass="ui-table-customers"
+         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>id</th>
+      <th>createdTime</th>
+      <th>
+        <p-dropdown [options]="inProgressOptions" (onChange)="dt.filter($event.value, 'inProgress', 'equals')"
+                    styleClass="ui-column-filter" placeholder="In Progress" [showClear]="true">
+          <ng-template let-option pTemplate="item">
+            <span [class]="'ticket-badge status-' + option.value">{{option.label}}</span>
+          </ng-template>
+        </p-dropdown>
+      </th>
+      <th>
+        <p-dropdown [options]="resolvedOptions" (onChange)="dt.filter($event.value, 'resolved', 'equals')"
+                    styleClass="ui-column-filter" placeholder="Resolved" [showClear]="true">
+          <ng-template let-option pTemplate="item">
+            <span [class]="'ticket-badge status-' + option.value">{{option.label}}</span>
+          </ng-template>
+        </p-dropdown>
+      </th>
+      <th>type</th>
+      <th>brand</th>
+      <th>name</th>
+      <th>age</th>
+      <th>price</th>
+      <th>shopName</th>
+      <th>link</th>
+      <th>productIds</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-ticket>
+    <tr>
+      <td>{{ticket.id}}</td>
+      <td>{{ticket.createdTime}}</td>
+      <td style="text-align:center">
+        <span [class]="'ticket-badge status-' + ticket.inProgress">{{ticket.inProgress}}</span>
+      </td>
+      <td style="text-align:center">
+        <span [class]="'ticket-badge status-' + ticket.resolved">{{ticket.resolved}}</span>
+      </td>
+      <td>{{ticket.scrapperOffer.type.showName}}</td>
+      <td>{{ticket.scrapperOffer.brand}}</td>
+      <td>{{ticket.scrapperOffer.name}}</td>
+      <td>{{ticket.scrapperOffer.age}}</td>
+      <td>{{ticket.scrapperOffer.price}}</td>
+      <td>{{ticket.scrapperOffer.shopName}}</td>
+      <td>{{ticket.scrapperOffer.link}}</td>
+      <td>{{ticket.productIds}}</td>
+      <p-button (onClick)="toDetails($event, ticket.id)" label="Click"></p-button>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="8" style="text-align:center" height="50">No tickets found.</td>
+    </tr>
+  </ng-template>
+</p-table>

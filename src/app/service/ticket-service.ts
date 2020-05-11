@@ -24,7 +24,9 @@ export class TicketService {
                 id: tickets[key].id,
                 scrapperOffer: tickets[key].scrapperOffer,
                 productIds: tickets[key].productIds,
-                createdTime: tickets[key].createdTime
+                createdTime: tickets[key].createdTime,
+                inProgress: tickets[key].inProgress,
+                resolved: tickets[key].resolved
               });
             }
           }
