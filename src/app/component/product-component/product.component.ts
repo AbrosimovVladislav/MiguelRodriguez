@@ -22,11 +22,5 @@ export class ProductComponent implements OnInit {
         console.log(this.products);
       }
     );
-
-
-    this.httpClient.get<Product[]>('http://localhost:8083/products')
-      .subscribe(products => {
-        products.forEach(product => this.products.push(product));
-      });
   }
 }
