@@ -1,4 +1,15 @@
 <p>{{ticket.scrapperOffer.name}}</p>
 <p>{{ticket.id}}</p>
 
-<p-button (onClick)="resolve('1')" label="Click" ></p-button>
+<p-dropdown [options]="productsIds" [(ngModel)]="selectedProductId" filter="true">
+  <ng-template let-pid pTemplate="selectedItem">
+    <span style="vertical-align:middle; margin-left: .5em">{{pid.label}}</span>
+  </ng-template>
+  <ng-template let-pid pTemplate="item">
+    <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+      <div style="font-size:14px;float:right;margin-top:4px">{{pid.value}}</div>
+    </div>
+  </ng-template>
+</p-dropdown>
+
+<p-button (onClick)="resolve(selectedProductId)" label="Click"></p-button>

@@ -13,6 +13,7 @@ import {ProductComponent} from './component/product-component/product.component'
 import {TicketDetailsComponent} from './component/ticket-details/ticket-details.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DropdownModule, InputTextModule} from 'primeng';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {DropdownModule, InputTextModule} from 'primeng';
       ]
     ),
     InputTextModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

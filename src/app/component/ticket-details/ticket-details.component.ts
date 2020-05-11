@@ -3,6 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {Ticket} from '../../model/Ticket';
 import {HttpClient} from '@angular/common/http';
 import {MatcherOffer} from '../../model/MatcherOffer';
+import {ProductService} from '../../service/product-service';
+import {Product} from '../../model/Product';
+import {SelectItem} from 'primeng';
 
 @Component({
   selector: 'app-ticket-details',
@@ -11,14 +14,24 @@ import {MatcherOffer} from '../../model/MatcherOffer';
 })
 export class TicketDetailsComponent implements OnInit {
   ticket: Ticket;
+  productsIds: SelectItem[] = [];
+  selectedProductId: string;
 
-  constructor(private httpClient: HttpClient, private route: ActivatedRoute) {
+  constructor(private productService: ProductService, private httpClient: HttpClient, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.route
       .paramMap
       .subscribe(paramMap => this.getTicket(paramMap.get('id')));
+
+    const url = 'http://localhost:8083/products';
+    this.productService.getProducts(url).subscribe(
+      products => {
+        products.forEach((p: Product) => this.productsIds.push({label: p.productId, value: p.productId}));
+        console.log(this.productsIds);
+      }
+    );
   }
 
   getTicket(id: string) {
