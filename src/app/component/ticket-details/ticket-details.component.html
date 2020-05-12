@@ -1,5 +1,10 @@
+<span [class]="'ticket-badge status-' + ticket.status">{{ticket.status}}</span>
+<p></p>
+
 <p>{{ticket.scrapperOffer.name}}</p>
 <p>{{ticket.id}}</p>
+
+
 
 <p-dropdown [options]="productsIds" [(ngModel)]="selectedProductId" filter="true">
   <ng-template let-pid pTemplate="selectedItem">

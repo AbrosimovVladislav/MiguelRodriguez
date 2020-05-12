@@ -8,13 +8,28 @@ import {Injectable} from '@angular/core';
 })
 export class TicketService {
 
+  basePath = 'http://localhost:8083';
+  getTicketsPath = '/tickets';
+  setInProgressPath = '/inProgress/';
+
   constructor(private http: HttpClient) {
   }
 
-  getTickets(url: string) {
+  setInProgress(id: string) {
+    console.log('setInProgress ' + id);
+    return this.http
+      .get<Ticket>(this.basePath + this.setInProgressPath + id)
+      .pipe(
+        map(
+          ticket => console.log(ticket)
+        )
+      ).subscribe();
+  }
+
+  getTickets() {
     console.log('we are in getProducts');
     return this.http
-      .get<Ticket[]>(url)
+      .get<Ticket[]>(this.basePath + this.getTicketsPath)
       .pipe(
         map(tickets => {
           const ticketArray: Ticket[] = [];
@@ -25,8 +40,7 @@ export class TicketService {
                 scrapperOffer: tickets[key].scrapperOffer,
                 productIds: tickets[key].productIds,
                 createdTime: tickets[key].createdTime,
-                inProgress: tickets[key].inProgress,
-                resolved: tickets[key].resolved
+                status: tickets[key].status
               });
             }
           }

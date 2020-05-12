@@ -11,14 +11,14 @@ import {TicketService} from '../../service/ticket-service';
 })
 export class TicketCatalogueComponent implements OnInit {
   tickets: Ticket[] = [];
-  resolvedOptions: any[] = [{label: 'Yes', value: true}, {label: 'No', value: false}];
-  inProgressOptions: any[] = [{label: 'Yes', value: true}, {label: 'No', value: false}];
+  statuses: any[] = [{label: 'NEW', value: 'NEW'}, {label: 'IN_PROGRESS', value: 'IN_PROGRESS'}, {label: 'RESOLVED', value: 'RESOLVED'}];
 
-  constructor(private ticketService: TicketService, private httpClient: HttpClient, private router: Router) {}
+
+  constructor(private ticketService: TicketService, private httpClient: HttpClient, private router: Router) {
+  }
 
   ngOnInit() {
-    const url = 'http://localhost:8083/tickets';
-    this.ticketService.getTickets(url).subscribe(
+    this.ticketService.getTickets().subscribe(
       tickets => {
         this.tickets = tickets;
         console.log(this.tickets);
@@ -27,6 +27,7 @@ export class TicketCatalogueComponent implements OnInit {
   }
 
   toDetails(event: EventEmitter<any>, id: string) {
+    this.ticketService.setInProgress(id);
     this.router.navigate(['/tickets/' + id]);
   }
 }

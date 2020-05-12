@@ -5,6 +5,5 @@ export interface Ticket {
   scrapperOffer: ScrapperOffer;
   productIds;
   createdTime;
-  inProgress;
-  resolved;
+  status;
 }
