@@ -1,5 +1,5 @@
 <p-table #dt [value]="tickets" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [autoLayout]="true"
-         dataKey="id" sortField="id" [globalFilterFields]="['status']" styleClass="ui-table-customers"
+         dataKey="id" sortField="status.length" [globalFilterFields]="['status']" styleClass="ui-table-customers"
          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
   <ng-template pTemplate="header">
     <tr>
@@ -38,7 +38,7 @@
       <td>{{ticket.scrapperOffer.shopName}}</td>
       <td>{{ticket.scrapperOffer.link}}</td>
       <td>{{ticket.productIds}}</td>
-      <p-button [disabled]="ticket.status!='NEW'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button>
+      <p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button>
     </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">

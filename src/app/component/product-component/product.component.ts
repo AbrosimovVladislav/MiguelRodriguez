@@ -15,8 +15,7 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const url = 'http://localhost:8083/products';
-    this.productService.getProducts(url).subscribe(
+    this.productService.getProducts().subscribe(
       products => {
         this.products = products;
         console.log(this.products);

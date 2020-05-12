@@ -8,13 +8,32 @@ import {Injectable} from '@angular/core';
 })
 export class ProductService {
 
+  aggregatorBasePath = 'http://localhost:8082';
+  getProductsFromAggregatorPath = '/allProducts';
+  createProductPath = '/product';
+
   constructor(private http: HttpClient) {
   }
 
-  getProducts(url: string) {
+  createProduct(model: string, brandShortName: string, typeShowName: string, age: string, description: string, srcImageLink: string) {
+    console.log('we are in createProduct');
+    return this.http
+      .post<string>(this.aggregatorBasePath + this.createProductPath,
+        {
+          model: model,
+          brandShortName: brandShortName,
+          typeShowName: typeShowName,
+          age: age,
+          description: description,
+          srcImageLink: srcImageLink
+        }
+      );
+  }
+
+  getProducts() {
     console.log('we are in getProducts');
     return this.http
-      .get<Product[]>(url)
+      .get<Product[]>(this.aggregatorBasePath + this.getProductsFromAggregatorPath)
       .pipe(
         map(products => {
           const productArray: Product[] = [];

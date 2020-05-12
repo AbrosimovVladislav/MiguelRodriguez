@@ -5,7 +5,6 @@
 <p>{{ticket.id}}</p>
 
 
-
 <p-dropdown [options]="productsIds" [(ngModel)]="selectedProductId" filter="true">
   <ng-template let-pid pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{pid.label}}</span>
@@ -17,4 +16,66 @@
   </ng-template>
 </p-dropdown>
 
-<p-button (onClick)="resolve(selectedProductId)" label="Click"></p-button>
+<p></p>
+
+<p-button (onClick)="resolve(selectedProductId)" label="Resolve(SendScrapperWithProIdToMetcher)"></p-button>
+
+
+<h3>Model</h3>
+<span class="ui-float-label">
+    <input id="model-input" type="text" size="30" [(ngModel)]="model" pInputText>
+    <label for="model-input">Model</label>
+</span>
+
+<h3>Brand</h3>
+<p-dropdown [options]="brands" [(ngModel)]="brandShortName" filter="true">
+  <ng-template let-item pTemplate="selectedItem">
+    <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
+  </ng-template>
+  <ng-template let-item pTemplate="item">
+    <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+      <div style="font-size:14px;float:right;margin-top:4px">{{item.value}}</div>
+    </div>
+  </ng-template>
+</p-dropdown>
+
+<h3>Type</h3>
+<p-dropdown [options]="types" [(ngModel)]="typeShowName" filter="true">
+  <ng-template let-item pTemplate="selectedItem">
+    <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
+  </ng-template>
+  <ng-template let-item pTemplate="item">
+    <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+      <div style="font-size:14px;float:right;margin-top:4px">{{item.value}}</div>
+    </div>
+  </ng-template>
+</p-dropdown>
+
+<h3>Age</h3>
+<p-dropdown [options]="ages" [(ngModel)]="age" filter="true">
+  <ng-template let-item pTemplate="selectedItem">
+    <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
+  </ng-template>
+  <ng-template let-item pTemplate="item">
+    <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+      <div style="font-size:14px;float:right;margin-top:4px">{{item.label}}</div>
+    </div>
+  </ng-template>
+</p-dropdown>
+
+<h3>Description</h3>
+<span class="ui-float-label">
+    <input id="description-input" type="text" size="30" [(ngModel)]="description" pInputText>
+    <label for="description-input">Description</label>
+</span>
+
+<h3>Image link</h3>
+<span class="ui-float-label">
+    <input id="imgLink-input" type="text" size="30" [(ngModel)]="srcImageLink" pInputText>
+    <label for="imgLink-input">Image link</label>
+</span>
+
+<p></p>
+
+<p-button (onClick)="resolveWithProductCreating()" label="CreateProduct"></p-button>
+
