@@ -1,4 +1,28 @@
-.page-title {
-  text-align: center;
-  font-size: 100px;
+.active {
+  background-color: #E07E0B;
+}
+
+.page-header {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  background: #0E0E0E;
+  padding: 10px 0;
+  color: #E5E5E5;
+  top: 0;
+}
+
+.main-menu {
+  background: #0E0E0E;
+  color: #E5E5E5;
+
+}
+
+footer {
+  width: 100%;
+  background: #0E0E0E;
+  padding: 10px 0;
+  color: #E5E5E5;
+  position: fixed;
+  bottom: 0;
 }

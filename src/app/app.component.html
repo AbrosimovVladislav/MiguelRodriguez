@@ -1,8 +1,20 @@
-<header>
-  <h1>This is TroubleTicketUI (Miguel Rodriguez)</h1>
-</header>
-<p-menubar [model]="items"></p-menubar>
-<router-outlet></router-outlet>
-<footer>
-  © 2020 Miguel Rodriguez Production, Inc.
-</footer>
+
+  <header>
+    <div class="page-header">
+      <img src = "" alt = "logo">
+      <p-menubar [model]="items"
+                 styleClass="main-menu">
+        <p-button label="Съебаться отсюда"
+                  icon="pi pi-power-off"
+                  styleClass="ui-button-secondary ui-button-raised"
+        ></p-button>
+      </p-menubar>
+      <router-outlet></router-outlet>
+    </div>
+  </header>
+  <footer>
+    <div class = "page-footer">
+      © 2020 Miguel Rodriguez Production, Inc.
+    </div>
+  </footer>
+

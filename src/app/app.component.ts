@@ -9,8 +9,10 @@ import {MenuItem} from 'primeng';
 export class AppComponent {
   title = 'MiguelRodriguez';
   items: MenuItem[] = [
-    {label: 'Main', url: 'main'},
-    {label: 'Ticket Catalogue', url: 'tickets'},
-    {label: 'Product Catalogue', url: 'products'}
+    {label: 'Main', url: 'main', icon: 'pi pi-globe'},
+    {label: 'Ticket Catalogue', url: 'tickets', icon: 'pi pi-ticket'},
+    {label: 'Product Catalogue', url: 'products', icon: 'pi pi-id-card'}
   ];
+
+
 }
