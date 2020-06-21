@@ -2,13 +2,14 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Product} from '../model/Product';
 import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  aggregatorBasePath = 'http://localhost:8082';
+  aggregatorBasePath = environment.baseApiUrl + '8082';
   getProductsFromAggregatorPath = '/allProducts';
   createProductPath = '/product';
 
@@ -20,12 +21,12 @@ export class ProductService {
     return this.http
       .post<string>(this.aggregatorBasePath + this.createProductPath,
         {
-          model: model,
-          brandShortName: brandShortName,
-          typeShowName: typeShowName,
-          age: age,
-          description: description,
-          srcImageLink: srcImageLink
+          model,
+          brandShortName,
+          typeShowName,
+          age,
+          description,
+          srcImageLink
         }
       );
   }

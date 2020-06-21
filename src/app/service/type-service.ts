@@ -3,14 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Type} from '../model/Type';
 import {Observable} from 'rxjs';
-
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TypeService {
 
-  ttBasePath = 'http://localhost:8083';
+  ttBasePath = environment.baseApiUrl + '8083';
   getTypesPath = '/types';
 
   constructor(private http: HttpClient) {

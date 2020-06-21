@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Brand} from '../model/Brand';
+import {environment} from '../../environments/environment';
 
 
 @Injectable({
@@ -10,11 +11,10 @@ import {Brand} from '../model/Brand';
 })
 export class BrandService {
 
-  aggregatorBasePath = 'http://localhost:8082';
+  aggregatorBasePath = environment.baseApiUrl + '8082';
   getBrandsPath = '/brands';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getBrands(): Observable<Brand[]> {
     console.log('we are in getBrands');
