@@ -32,4 +32,4 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "dist/"
         target: "/root/frontend"
-        strip_components: 0
+        strip_components: 1
