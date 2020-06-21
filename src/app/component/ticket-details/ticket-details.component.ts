@@ -97,6 +97,6 @@ export class TicketDetailsComponent implements OnInit {
         + '&type.showName=' + matcherOffer.type.showName)
       .subscribe(incomingTicket => console.log(incomingTicket));
 
-    this.router.navigate(['/tickets/']);
+    this.router.navigate(['tt/tickets/']);
   }
 }
