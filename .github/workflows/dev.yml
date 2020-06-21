@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           source: "dist/"
-          target: "/root/frontend"
-          strip_components: 1
+          target: "/var/www/tt"
+          strip_components: 2
