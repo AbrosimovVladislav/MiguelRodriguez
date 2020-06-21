@@ -28,6 +28,6 @@ export class TicketCatalogueComponent implements OnInit {
 
   toDetails(event: EventEmitter<any>, id: string) {
     this.ticketService.setInProgress(id);
-    this.router.navigate(['tt/tickets/' + id]);
+    this.router.navigate(['/tickets/' + id]);
   }
 }

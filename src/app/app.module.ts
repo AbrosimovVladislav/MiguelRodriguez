@@ -32,10 +32,10 @@ import {FormsModule} from '@angular/forms';
     MenubarModule,
     RouterModule.forRoot(
       [
-        {path: 'tt/main', component: MainComponent},
-        {path: 'tt/tickets', component: TicketCatalogueComponent},
-        {path: 'tt/tickets/:id', component: TicketDetailsComponent},
-        {path: 'tt/products', component: ProductComponent}
+        {path: 'main', component: MainComponent},
+        {path: 'tickets', component: TicketCatalogueComponent},
+        {path: 'tickets/:id', component: TicketDetailsComponent},
+        {path: 'products', component: ProductComponent}
       ]
     ),
     InputTextModule,
