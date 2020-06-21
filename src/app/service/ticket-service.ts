@@ -2,13 +2,14 @@ import {Ticket} from '../model/Ticket';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TicketService {
 
-  basePath = 'http://localhost:8083';
+  basePath = environment.baseApiUrl + '8083';
   getTicketsPath = '/tickets';
   setInProgressPath = '/inProgress/';
 

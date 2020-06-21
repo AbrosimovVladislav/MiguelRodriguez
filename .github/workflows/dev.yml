@@ -1,9 +1,9 @@
-name: prod
+name: dev
 
 on:
   push:
     branches:
-      - master
+      - develop
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -27,9 +27,9 @@ jobs:
       - name: Copy artifact via SSH
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USER }}
-          key: ${{ secrets.PROD_KEY }}
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USER }}
+          key: ${{ secrets.DEV_KEY }}
           source: "dist/"
           target: "/var/www/tt"
           strip_components: 2

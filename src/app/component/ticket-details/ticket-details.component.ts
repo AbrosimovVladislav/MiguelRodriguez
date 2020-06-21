@@ -8,6 +8,7 @@ import {Product} from '../../model/Product';
 import {SelectItem} from 'primeng';
 import {TypeService} from '../../service/type-service';
 import {BrandService} from '../../service/brand-service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-ticket-details',
@@ -15,6 +16,7 @@ import {BrandService} from '../../service/brand-service';
   styleUrls: ['./ticket-details.component.scss']
 })
 export class TicketDetailsComponent implements OnInit {
+  baseApiUrl = environment.baseApiUrl + '8083';
   ticket: Ticket;
   productsIds: SelectItem[] = [];
   selectedProductId: string;
@@ -68,7 +70,7 @@ export class TicketDetailsComponent implements OnInit {
 
   getTicket(id: string) {
     this.httpClient
-      .get<Ticket>('http://localhost:8083/tickets/' + id)
+      .get<Ticket>(this.baseApiUrl + '/tickets/' + id)
       .subscribe(incomingTicket => this.ticket = incomingTicket);
   }
 
@@ -88,7 +90,7 @@ export class TicketDetailsComponent implements OnInit {
     matcherOffer.type = this.ticket.scrapperOffer.type;
 
     this.httpClient
-      .get<Ticket>('http://localhost:8083/resolveTicket?ticketId=' + this.ticket.id
+      .get<Ticket>(this.baseApiUrl + '/resolveTicket?ticketId=' + this.ticket.id
         + '&name=' + matcherOffer.name
         + '&productId=' + matcherOffer.productId
         + '&shop=' + matcherOffer.shop
