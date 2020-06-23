@@ -3,6 +3,16 @@
   font-size: 100px;
 }
 
+header {
+  background: PapayaWhip;
+  color: Maroon;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+}
+
 footer {
   font-family: Ubuntu;
   color: Maroon;
