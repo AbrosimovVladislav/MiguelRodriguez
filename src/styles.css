@@ -13,3 +13,28 @@ body {
   margin: 0;
   padding: 0;
 }
+
+body button.ui-button {
+  color: #800000;
+  font-weight: bold;
+  background-color: #ffefd5;
+  border: 1px solid #a07070;
+}
+
+body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:hover {
+  color: #ffefd5;
+  background-color: #800000;
+  border: 1px solid #a07070;
+}
+
+body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:focus {
+  border: none;
+  box-shadow: none;
+}
+
+body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:focus {
+  color: #ffefd5;
+  background-color: #800000;
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 0.1em #a07070;
+}

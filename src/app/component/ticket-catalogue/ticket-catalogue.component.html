@@ -21,6 +21,7 @@
       <th>shopName</th>
       <th>link</th>
       <th>productIds</th>
+      <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-ticket>
@@ -38,7 +39,7 @@
       <td>{{ticket.scrapperOffer.shopName}}</td>
       <td>{{ticket.scrapperOffer.link}}</td>
       <td>{{ticket.productIds}}</td>
-      <p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button>
+      <td><p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button></td>
     </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">
