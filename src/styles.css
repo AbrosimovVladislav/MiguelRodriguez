@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-main, app-ticket-catalogue, app-product-component, app-ticket-details, .container {
+  flex: 1 0 auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
