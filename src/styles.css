@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* fixed footer */
 app-root {
   display: flex;
   flex-direction: column;
@@ -9,32 +15,46 @@ app-main, app-ticket-catalogue, app-product-component, app-ticket-details, .cont
   flex: 1 0 auto;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
+/* custom style of buttons */
 body button.ui-button {
   color: #800000;
   font-weight: bold;
   background-color: #ffefd5;
   border: 1px solid #a07070;
 }
-
-body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:hover {
+/* hovered buttons */
+body button.ui-button.ui-widget.ui-state-default:hover {
   color: #ffefd5;
   background-color: #800000;
   border: 1px solid #a07070;
 }
-
-body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:focus {
+/* remove standard border and shadow on focused buttons */
+body button.ui-button.ui-widget.ui-state-default:focus {
   border: none;
   box-shadow: none;
 }
-
-body button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:focus {
+/* focused buttons */
+body button.ui-button.ui-widget.ui-state-default:focus {
   color: #ffefd5;
   background-color: #800000;
   border: 1px solid #a07070;
   box-shadow: 0 0 0 0.1em #a07070;
+}
+
+/* custom style of paginator active pages */
+body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-active {
+  color: #800000;
+  font-weight: bold;
+  background-color: #ffefd5;
+}
+/* focused paginator pages*/
+body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-default:focus {
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/* focused paginator elements*/
+body div.ui-paginator-bottom a.ui-paginator-first.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-prev.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-next.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-last.ui-paginator-element.ui-state-default:focus{
+  box-shadow: 0 0 0 2px #ffefd5;
 }
