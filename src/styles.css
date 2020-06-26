@@ -10,7 +10,6 @@ app-root {
   flex-direction: column;
   min-height: 100vh;
 }
-
 app-main, app-ticket-catalogue, app-product-component, app-ticket-details, .container {
   flex: 1 0 auto;
 }
@@ -50,11 +49,13 @@ body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-active {
 /* focused paginator pages*/
 body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-default:focus {
   box-shadow: 0 0 0 2px #ffefd5;
+  border: 1px solid #a07070;
 }
 /* focused paginator elements*/
 body div.ui-paginator-bottom a.ui-paginator-first.ui-paginator-element.ui-state-default:focus,
 body div.ui-paginator-bottom a.ui-paginator-prev.ui-paginator-element.ui-state-default:focus,
 body div.ui-paginator-bottom a.ui-paginator-next.ui-paginator-element.ui-state-default:focus,
 body div.ui-paginator-bottom a.ui-paginator-last.ui-paginator-element.ui-state-default:focus{
+  border: 1px solid #a07070;
   box-shadow: 0 0 0 2px #ffefd5;
 }
