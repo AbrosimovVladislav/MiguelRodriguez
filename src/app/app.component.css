@@ -13,6 +13,10 @@ header {
   padding: 0;
 }
 
+p-menubar {
+  margin-bottom: 2em;
+}
+
 footer {
   font-family: Ubuntu;
   color: Maroon;

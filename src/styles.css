@@ -10,7 +10,7 @@ app-root {
   flex-direction: column;
   min-height: 100vh;
 }
-app-main, app-ticket-catalogue, app-product-component, app-ticket-details, .container {
+.container {
   flex: 1 0 auto;
 }
 
