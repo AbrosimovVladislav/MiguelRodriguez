@@ -151,6 +151,8 @@
   /* to have small column of dropdown */
   p-dropdown .ui-column-filter.ui-dropdown {
     min-width: 5em;
+    width: 9em;
+    border: none;
   }
 }
 

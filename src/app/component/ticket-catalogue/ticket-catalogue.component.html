@@ -5,9 +5,9 @@
     <tr>
       <th>id</th>
       <th>createdTime</th>
-      <th style="width: 100px">
+      <th style="width: 100px; padding: 0">
         <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')"
-                    styleClass="ui-column-filter" placeholder="Status" [showClear]="true">
+                    styleClass="ui-column-filter" placeholder="Status" [showClear]="false">
           <ng-template let-option pTemplate="item">
             <span [class]="'ticket-badge status-' + option.value">{{option.label}}</span>
           </ng-template>
