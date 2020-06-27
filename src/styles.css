@@ -59,3 +59,20 @@ body div.ui-paginator-bottom a.ui-paginator-last.ui-paginator-element.ui-state-d
   border: 1px solid #a07070;
   box-shadow: 0 0 0 2px #ffefd5;
 }
+
+/* menu style */
+body p-menubar div.ui-menubar,
+body .ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link span{
+  color: maroon;
+  background-color: #ffefd5;
+}
+/* hovered menu-items*/
+body p-menubar div.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:hover,
+body .ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:hover span {
+  color: #ffefd5;
+  background-color: maroon;
+}
+/* focused menu-items*/
+body p-menubar div.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:focus {
+  box-shadow: 0 0 0 0.1em #a07070;
+}
