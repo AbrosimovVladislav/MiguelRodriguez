@@ -14,7 +14,7 @@ header {
 }
 
 p-menubar {
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 
 footer {
@@ -26,6 +26,6 @@ footer {
   padding-top: 1em;
   display: flex;
   justify-content: center;
-  margin-top: 2em;
+  margin-top: 0.5em;
   min-height: 3em;
 }
