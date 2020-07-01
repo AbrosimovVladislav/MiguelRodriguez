@@ -22,10 +22,7 @@
 
 
 <h3>Model</h3>
-<span class="ui-float-label">
-    <input id="model-input" type="text" size="30" [(ngModel)]="model" pInputText>
-    <label for="model-input">Model</label>
-</span>
+<input id="model-input" type="text" size="30" pInputText [(ngModel)]="model" placeholder="Model">
 
 <h3>Brand</h3>
 <p-dropdown [options]="brands" [(ngModel)]="brandShortName" filter="true">
@@ -64,16 +61,10 @@
 </p-dropdown>
 
 <h3>Description</h3>
-<span class="ui-float-label">
-    <input id="description-input" type="text" size="30" [(ngModel)]="description" pInputText>
-    <label for="description-input">Description</label>
-</span>
+<input id="description-input" type="text" size="30" pInputText [(ngModel)]="description" placeholder="Description">
 
 <h3>Image link</h3>
-<span class="ui-float-label">
-    <input id="imgLink-input" type="text" size="30" [(ngModel)]="srcImageLink" pInputText>
-    <label for="imgLink-input">Image link</label>
-</span>
+<input id="imgLink-input" type="text" size="30" pInputText [(ngModel)]="srcImageLink" placeholder="Image link">
 
 <p></p>
 
