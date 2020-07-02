@@ -37,7 +37,7 @@
       <td>{{ticket.scrapperOffer.age}}</td>
       <td>{{ticket.scrapperOffer.price}}</td>
       <td>{{ticket.scrapperOffer.shopName}}</td>
-      <td><a href="{{ticket.scrapperOffer.link}}">{{ticket.scrapperOffer.link}}</a></td>
+      <td><a href="{{ticket.scrapperOffer.link}}" target="_blank">{{ticket.scrapperOffer.link}}</a></td>
       <td>{{ticket.productIds}}</td>
       <td><p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button></td>
     </tr>
