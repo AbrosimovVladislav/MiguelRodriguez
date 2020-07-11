@@ -102,6 +102,11 @@ body input.ng-valid.ui-inputtext.ui-state-default:focus{
   border: 1px solid #a07070;
   box-shadow: 0 0 0 2px #ffefd5;
 }
+/*hovered input, dropdown search input*/
+body .ui-dropdown.ui-widget.ui-state-default:hover,
+body input.ng-valid.ui-inputtext.ui-state-default:hover {
+  border: 1px solid #a07070;
+}
 /*icon search*/
 body .ui-dropdown-panel .ui-dropdown-filter-container span.ui-dropdown-filter-icon {
   color: #a07070;
