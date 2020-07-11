@@ -48,8 +48,8 @@ body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-active {
 }
 /* focused paginator pages*/
 body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-default:focus {
-  box-shadow: 0 0 0 2px #ffefd5;
   border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
 }
 /* focused paginator elements*/
 body div.ui-paginator-bottom a.ui-paginator-first.ui-paginator-element.ui-state-default:focus,
@@ -75,4 +75,34 @@ body .ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:hover span
 /* focused menu-items*/
 body p-menubar div.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:focus {
   box-shadow: 0 0 0 0.1em #a07070;
+}
+
+/*dropdown style*/
+/*open and focused*/
+body p-dropdown .ui-dropdown.ui-widget.ui-state-default.ui-dropdown-open,
+body p-dropdown .ui-dropdown.ui-widget.ui-state-default.ui-state-focus {
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/*dropdown highlighted item*/
+body .ui-dropdown-panel ul.ui-dropdown-items li.ui-dropdown-item-group.ui-state-highlight,
+body .ui-dropdown-panel ul.ui-dropdown-items li.ui-dropdown-item.ui-state-highlight {
+  color: #ffefd5;
+  border: 1px solid #a07070;
+  background-color: #800000;
+}
+/*dropdown in table footer, to have visible border-bottom at focus */
+body div.ui-paginator-bottom p-dropdown .ui-dropdown.ui-widget.ui-state-default {
+  height: 2.4em;
+}
+
+/*focused input, dropdown search input*/
+body p-dropdown input.ui-dropdown-filter.ui-inputtext.ui-state-default:focus,
+body input.ng-valid.ui-inputtext.ui-state-default:focus{
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/*icon search*/
+body .ui-dropdown-panel .ui-dropdown-filter-container span.ui-dropdown-filter-icon {
+  color: #a07070;
 }
