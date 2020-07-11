@@ -18,13 +18,13 @@
 
 <p></p>
 
-<p-button (onClick)="resolve(selectedProductId)" label="Resolve(SendScrapperWithProIdToMetcher)"></p-button>
+<p-button (onClick)="resolve(selectedProductId)" label="Разрешить"></p-button>
 
 
-<h3>Model</h3>
-<input id="model-input" type="text" size="30" pInputText [(ngModel)]="model" placeholder="Model">
+<h3>Модель</h3>
+<input id="model-input" type="text" size="30" pInputText [(ngModel)]="model" placeholder="Модель">
 
-<h3>Brand</h3>
+<h3>Бренд</h3>
 <p-dropdown [options]="brands" [(ngModel)]="brandShortName" filter="true">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
@@ -36,7 +36,7 @@
   </ng-template>
 </p-dropdown>
 
-<h3>Type</h3>
+<h3>Тип товара</h3>
 <p-dropdown [options]="types" [(ngModel)]="typeShowName" filter="true">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
@@ -48,7 +48,7 @@
   </ng-template>
 </p-dropdown>
 
-<h3>Age</h3>
+<h3>Возраст</h3>
 <p-dropdown [options]="ages" [(ngModel)]="age" filter="true">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
@@ -60,13 +60,13 @@
   </ng-template>
 </p-dropdown>
 
-<h3>Description</h3>
-<input id="description-input" type="text" size="30" pInputText [(ngModel)]="description" placeholder="Description">
+<h3>Добавить описание</h3>
+<input id="description-input" type="text" size="30" pInputText [(ngModel)]="description" placeholder="Описание">
 
-<h3>Image link</h3>
-<input id="imgLink-input" type="text" size="30" pInputText [(ngModel)]="srcImageLink" placeholder="Image link">
+<h3>Ссылка на изображение</h3>
+<input id="imgLink-input" type="text" size="30" pInputText [(ngModel)]="srcImageLink" placeholder="Ссылка на изображение">
 
 <p></p>
 
-<p-button (onClick)="resolveWithProductCreating()" label="CreateProduct"></p-button>
+<p-button (onClick)="resolveWithProductCreating()" label="Создать товар"></p-button>
 
