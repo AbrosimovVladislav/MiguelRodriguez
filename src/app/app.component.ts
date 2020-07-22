@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'MiguelRodriguez';
   items: MenuItem[] = [
     {label: 'Главная', url: 'main'},
-    {label: 'Каталог задач', url: 'tickets'},
+    {label: 'Каталог тикетов', url: 'tickets'},
     {label: 'Каталог товаров', url: 'products'}
   ];
 }

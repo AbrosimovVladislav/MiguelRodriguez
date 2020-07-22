@@ -3,7 +3,7 @@
          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
   <ng-template pTemplate="header">
     <tr>
-      <th>ID задачи</th>
+      <th>ID тикета</th>
       <th>Время создания</th>
       <th style="width: 100px; padding: 0">
         <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')"
