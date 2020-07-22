@@ -3,24 +3,24 @@
          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
   <ng-template pTemplate="header">
     <tr>
-      <th>id</th>
-      <th>createdTime</th>
+      <th>ID тикета</th>
+      <th>Время создания</th>
       <th style="width: 100px; padding: 0">
         <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')"
-                    styleClass="ui-column-filter" placeholder="Status" [showClear]="false">
+                    styleClass="ui-column-filter" placeholder="Статус" [showClear]="false">
           <ng-template let-option pTemplate="item">
             <span [class]="'ticket-badge status-' + option.value">{{option.label}}</span>
           </ng-template>
         </p-dropdown>
       </th>
-      <th>type</th>
-      <th>brand</th>
-      <th>name</th>
-      <th>age</th>
-      <th>price</th>
-      <th>shopName</th>
-      <th>link</th>
-      <th>productIds</th>
+      <th>Тип товара</th>
+      <th>Бренд</th>
+      <th>Наименование</th>
+      <th>Возраст</th>
+      <th>Цена</th>
+      <th>Название магазина</th>
+      <th>Ссылка на товар</th>
+      <th>ID товара</th>
       <th></th>
     </tr>
   </ng-template>
@@ -39,12 +39,12 @@
       <td>{{ticket.scrapperOffer.shopName}}</td>
       <td><a href="{{ticket.scrapperOffer.link}}" target="_blank">{{ticket.scrapperOffer.link}}</a></td>
       <td>{{ticket.productIds}}</td>
-      <td><p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Click"></p-button></td>
+      <td><p-button [disabled]="ticket.status==='RESOLVED'" (onClick)="toDetails($event, ticket.id)" label="Решить"></p-button></td>
     </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td colspan="12" style="text-align:center" height="50">No tickets found.</td>
+      <td colspan="12" style="text-align:center" height="50">Задачи не найдены</td>
     </tr>
   </ng-template>
 </p-table>
