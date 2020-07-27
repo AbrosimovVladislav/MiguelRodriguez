@@ -1,6 +1,6 @@
 <p-table #dt [value]="tickets" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [autoLayout]="true"
          dataKey="id" sortField="status.length" [globalFilterFields]="['status']" styleClass="ui-table-customers"
-         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+         currentPageReportTemplate="Показаны с {first} по {last} тикеты из {totalRecords}" [showCurrentPageReport]="true">
   <ng-template pTemplate="header">
     <tr>
       <th>ID тикета</th>
@@ -44,7 +44,7 @@
   </ng-template>
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td colspan="12" style="text-align:center" height="50">Задачи не найдены</td>
+      <td colspan="12" style="text-align:center" height="50">Тикеты не найдены</td>
     </tr>
   </ng-template>
 </p-table>
