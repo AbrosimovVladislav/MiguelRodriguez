@@ -5,7 +5,7 @@
 <p>{{ticket.id}}</p>
 
 
-<p-dropdown [options]="productsIds" [(ngModel)]="selectedProductId" filter="true">
+<p-dropdown [options]="productsIds" [(ngModel)]="selectedProductId" filter="true" placeholder="ID оффера">
   <ng-template let-pid pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{pid.label}}</span>
   </ng-template>
@@ -25,7 +25,7 @@
 <input id="model-input" type="text" size="30" pInputText [(ngModel)]="model" placeholder="Модель">
 
 <h3>Бренд</h3>
-<p-dropdown [options]="brands" [(ngModel)]="brandShortName" filter="true">
+<p-dropdown [options]="brands" [(ngModel)]="brandShortName" filter="true" placeholder="Бренд">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
   </ng-template>
@@ -37,7 +37,7 @@
 </p-dropdown>
 
 <h3>Тип товара</h3>
-<p-dropdown [options]="types" [(ngModel)]="typeShowName" filter="true">
+<p-dropdown [options]="types" [(ngModel)]="typeShowName" filter="true" placeholder="Тип товара">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
   </ng-template>
@@ -49,7 +49,7 @@
 </p-dropdown>
 
 <h3>Возраст</h3>
-<p-dropdown [options]="ages" [(ngModel)]="age" filter="true">
+<p-dropdown [options]="ages" [(ngModel)]="age" filter="true" placeholder="Возраст">
   <ng-template let-item pTemplate="selectedItem">
     <span style="vertical-align:middle; margin-left: .5em">{{item.value}}</span>
   </ng-template>
