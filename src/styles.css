@@ -91,9 +91,10 @@ body .ui-dropdown-panel ul.ui-dropdown-items li.ui-dropdown-item.ui-state-highli
   border: 1px solid #a07070;
   background-color: #800000;
 }
-/*dropdown in table footer, to have visible border-bottom at focus */
+/*dropdown in table footer, to have visible border-bottom at focus*/
 body div.ui-paginator-bottom p-dropdown .ui-dropdown.ui-widget.ui-state-default {
   height: 2.4em;
+  border: 1px solid #fff;
 }
 
 /*focused input, dropdown search input*/
