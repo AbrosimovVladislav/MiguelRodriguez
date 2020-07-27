@@ -27,7 +27,7 @@
   <ng-template pTemplate="body" let-ticket>
     <tr>
       <td>{{ticket.id}}</td>
-      <td>{{ticket.createdTime}}</td>
+      <td>{{ticket.createdTime | date:"dd/MM/yyyy H:mm "}}</td>
       <td style="text-align:center">
         <span [class]="'ticket-badge status-' + ticket.status">{{ticket.status}}</span>
       </td>
