@@ -1,6 +1,10 @@
 :host ::ng-deep .ui-table-customers {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 
+  /* min height for empty table*/
+  .ui-table-wrapper table {
+    min-height: 200px;
+  }
   .ticket-badge {
     border-radius: 2px;
     padding: .25em .5em;
@@ -103,7 +107,7 @@
   }
 
   .ui-table-thead > tr > th {
-    border: 0 none;
+    border: 2px solid #c8c8c8;
     text-align: left;
 
     &.ui-filter-column {
@@ -122,7 +126,7 @@
   }
 
   .ui-table-tbody > tr > td {
-    border: 0 none;
+    border: 1px solid #c8c8c8;
     cursor: auto;
 
     &:first-child {
@@ -143,6 +147,13 @@
   .ui-table-tbody > tr > td .ui-column-title {
     display: none;
   }
+
+  /* to have small column of dropdown */
+  p-dropdown .ui-column-filter.ui-dropdown {
+    min-width: 5em;
+    width: 9em;
+    border: none;
+  }
 }
 
 /* Responsive */
@@ -161,7 +172,6 @@
         width: 100% !important;
         float: left;
         clear: left;
-        border: 0 none;
 
         .ui-column-title {
           padding: .4em;

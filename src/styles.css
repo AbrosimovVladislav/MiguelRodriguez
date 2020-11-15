@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* fixed footer */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1 0 auto;
+}
+
+/* custom style of buttons */
+body button.ui-button {
+  color: #800000;
+  font-weight: bold;
+  background-color: #ffefd5;
+  border: 1px solid #a07070;
+}
+/* hovered buttons */
+body button.ui-button.ui-widget.ui-state-default:hover {
+  color: #ffefd5;
+  background-color: #800000;
+  border: 1px solid #a07070;
+}
+/* remove standard border and shadow on focused buttons */
+body button.ui-button.ui-widget.ui-state-default:focus {
+  border: none;
+  box-shadow: none;
+}
+/* focused buttons */
+body button.ui-button.ui-widget.ui-state-default:focus {
+  color: #ffefd5;
+  background-color: #800000;
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 0.1em #a07070;
+}
+
+/* custom style of paginator active pages */
+body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-active {
+  color: #800000;
+  font-weight: bold;
+  background-color: #ffefd5;
+}
+/* focused paginator pages*/
+body .ui-paginator span.ui-paginator-pages a.ui-paginator-page.ui-state-default:focus {
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/* focused paginator elements*/
+body div.ui-paginator-bottom a.ui-paginator-first.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-prev.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-next.ui-paginator-element.ui-state-default:focus,
+body div.ui-paginator-bottom a.ui-paginator-last.ui-paginator-element.ui-state-default:focus{
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+
+/* menu style */
+body p-menubar div.ui-menubar,
+body .ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link span{
+  color: maroon;
+  background-color: #ffefd5;
+}
+/* hovered menu-items*/
+body p-menubar div.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:hover,
+body .ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:hover span {
+  color: #ffefd5;
+  background-color: maroon;
+}
+/* focused menu-items*/
+body p-menubar div.ui-menubar .ui-menubar-root-list>.ui-menuitem>.ui-menuitem-link:focus {
+  box-shadow: 0 0 0 0.1em #a07070;
+}
+
+/*dropdown style*/
+/*open and focused*/
+body p-dropdown .ui-dropdown.ui-widget.ui-state-default.ui-dropdown-open,
+body p-dropdown .ui-dropdown.ui-widget.ui-state-default.ui-state-focus {
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/*dropdown highlighted item*/
+body .ui-dropdown-panel ul.ui-dropdown-items li.ui-dropdown-item-group.ui-state-highlight,
+body .ui-dropdown-panel ul.ui-dropdown-items li.ui-dropdown-item.ui-state-highlight {
+  color: #ffefd5;
+  border: 1px solid #a07070;
+  background-color: #800000;
+}
+/*dropdown in table footer, to have visible border-bottom at focus*/
+body div.ui-paginator-bottom p-dropdown .ui-dropdown.ui-widget.ui-state-default {
+  height: 2.4em;
+  border: 1px solid #fff;
+}
+
+/*focused input, dropdown search input*/
+body p-dropdown input.ui-dropdown-filter.ui-inputtext.ui-state-default:focus,
+body input.ng-valid.ui-inputtext.ui-state-default:focus{
+  border: 1px solid #a07070;
+  box-shadow: 0 0 0 2px #ffefd5;
+}
+/*hovered input, dropdown search input*/
+body .ui-dropdown.ui-widget.ui-state-default:hover,
+body input.ng-valid.ui-inputtext.ui-state-default:hover {
+  border: 1px solid #a07070;
+}
+/*icon search*/
+body .ui-dropdown-panel .ui-dropdown-filter-container span.ui-dropdown-filter-icon {
+  color: #a07070;
+}
